@@ -23,12 +23,11 @@ public class RestBuilder {
     }
 
     public RestBuilder build() {
-        this.nettyServer = new NettyServer(address == null ? "127.0.0.1" : address, port == 0 ? 3511 : port, route);
+        this.nettyServer = new NettyServer(address == null ? "127.0.0.1" : address, port == 0 ? 7676 : port, route);
         return this;
     }
 
     public void connect(){
         new Thread(() -> this.nettyServer.connect()).start();
     }
-
 }
